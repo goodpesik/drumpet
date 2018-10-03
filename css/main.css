@@ -53,6 +53,17 @@ body, html {
     font: 20px "Lato", sans-serif;
     color: #111;
   }
+
+  .facebook-feed {
+      height: 500px;
+      width: 500px;
+      margin: 0 auto;
+  }
+
+  .facebook-feed iframe {
+      width: 100%;
+      height: 500px;
+  }
   
   /* Turn off parallax scrolling for tablets and phones */
   @media only screen and (max-device-width: 1024px) {
