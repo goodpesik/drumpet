@@ -4,6 +4,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/main.css">
+    <script>
+        window.onload = function() {
+            var frame = document.querySelector('.facebook-frame');
+            var srcFrame = "https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fdrumpetduo&tabs=events&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=172930186099062"
+            var descktopWidth = '&width=500';
+            frame.src = screen.width > 767 ? srcFrame+descktopWidth : srcFrame;
+        }
+    </script>
     <title>Drumpet site example</title>
 </head>
 <body>
@@ -32,7 +40,6 @@
         <div class="section" style="color:#ddd;background-color:#282E34;text-align:center;text-align: justify;">
             <div class="facebook-feed">
                 <iframe class="facebook-frame"
-                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpg%2Fdrumpetduo&tabs=events&width=340&small_header=true&adapt_container_width=true&hide_cover=true&show_facepile=false&appId=172930186099062" 
                 style="border:none;" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             </div>
         </div>

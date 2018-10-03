@@ -63,7 +63,7 @@ body, html {
   }
 
   .facebook-feed iframe {
-      width: 340px;
+      width: 500px;
   }
   
   /* Turn off parallax scrolling for tablets and phones */
@@ -72,7 +72,6 @@ body, html {
         padding:30px 20px;
       }
       .facebook-feed iframe {
-        width: auto;
-        overflow: scroll;
+        width: 340px;
     }
   }
