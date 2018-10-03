@@ -73,5 +73,6 @@ body, html {
       }
       .facebook-feed iframe {
         width: auto;
+        overflow: scroll;
     }
   }
