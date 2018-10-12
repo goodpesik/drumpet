@@ -68,6 +68,11 @@ a:hover {
       height: auto;
       border-radius: 50%;
   }
+
+  h1 {
+      margin: 0 0 20px;
+      font-size: 18px;
+  }
   
   .bgimg {
     position: relative;
@@ -332,5 +337,8 @@ a:hover {
       }
       .facebook-feed iframe {
         width: 340px;
+    }
+    .bgimg {
+        background-attachment: scroll;
     }
   }
