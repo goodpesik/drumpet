@@ -115,7 +115,7 @@ a:hover {
     margin: 0;
     font-size: 18px;
     letter-spacing: 10px;
-    text-transform: capitalize;
+    text-transform: uppercase;
   }
 
   .section {
