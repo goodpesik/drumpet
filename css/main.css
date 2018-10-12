@@ -69,11 +69,6 @@ a:hover {
       border-radius: 50%;
   }
 
-  h1 {
-      margin: 0 0 20px;
-      font-size: 18px;
-  }
-  
   .bgimg {
     position: relative;
     opacity: 0.65;
@@ -118,7 +113,7 @@ a:hover {
     color: #fff;
     padding: 18px;
     margin: 0;
-    font-size: 25px;
+    font-size: 18px;
     letter-spacing: 10px;
     text-transform: capitalize;
   }
