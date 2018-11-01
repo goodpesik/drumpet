@@ -39,6 +39,15 @@ a:hover {
     line-height: 40px;
     text-shadow: 1px 1px 2px #000;
     cursor: pointer;
+    padding-left: 50px;
+}
+
+.es .lang select {
+  background: url(../images/mexico.svg) no-repeat;
+}
+
+.en .lang select {
+  background: url(../images/united-states.svg) no-repeat;
 }
 
   .logo {
@@ -125,6 +134,15 @@ a:hover {
     text-align:center;
   }
 
+  .section a {
+    color:#fff;
+    text-decoration: underline;
+  }
+
+  .section a:hover {
+    text-decoration: none;
+  }
+
   .section--white {
     color: #777;
     background-color:white;
@@ -187,9 +205,9 @@ a:hover {
   }
 
   .contacts a {
-    color: white;
+    color: #fff;
     font-size: 30px;
-    text-shadow: 1px 1px 3px #000;
+    text-shadow: 2px 1px 1px #000;
     margin-left: 10px;
   }
 
