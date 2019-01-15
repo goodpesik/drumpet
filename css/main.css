@@ -178,6 +178,38 @@ a:hover {
       margin: 0 0 20px;
   }
 
+  .instaFeed {
+    position: relative;
+    overflow: hidden;
+    min-height: 300px;
+  }
+
+  .instaFeed a {
+    width: 25%;
+    float: left;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .instaFeed a:hover {
+    text-decoration: none;
+  }
+
+  .instaFeed img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .instaFeed .loader {
+    display: none;
+  }
+
+  .instaFeed.loading .loader{
+    display: block;
+    font-size: 30px;
+  }
+
   .facebook-feed {
       text-align: center;
   }
