@@ -1,0 +1,205 @@
+<div id="wrapper" [ngClass]="langSelectModel.lang">
+	<header class="header">
+		<div class="container grid-row--gutter-none grid-row--between">
+			<div class="col-auto">
+				<div class="logo">
+					<a href="#">{{title}}</a>
+				</div>
+			</div>
+			<div class="col-auto grid-row--gutter-none grid-row--middle">
+				<nav class="col-auto" role="navigation">
+				<ul class="menu grid-row--gutter-none">
+				<li class="col-auto">
+					<a href="#section-home">
+						<span>Home</span>
+					</a>
+				</li>
+				<li class="col-auto">
+					<a href="#section-instagram">
+						<span class="text-en">Photo</span>
+						<span class="text-es">Foto</span>
+					</a>
+				</li>
+				<li class="col-auto">
+					<a href="#section-facebook">
+						<span class="text-en">Events</span>
+						<span class="text-es">Eventos</span>
+					</a>
+				</li>
+				<li class="col-auto">
+					<a href="#section-about">
+						<span class="text-en">About us</span>
+						<span class="text-es">Acerca de Nosotros</span>
+					</a>
+				</li>
+				<li class="col-auto">
+					<a href="#section-contacts">
+						<span class="text-en">Contacts</span>
+						<span class="text-es">Contactos</span>
+					</a>
+				</li>
+				</ul>
+				</nav>
+				<div class="lang col-auto">
+					<select [(ngModel)]='langSelectModel.lang' name="langSelect" id="lang-select" class="selectpicker">
+						<option *ngFor="let lang of langSetting" [value]="lang.abbrev">
+						{{ lang.name }}
+						</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Home section -->
+	<div id="section-home" class="bgimg bgimg-1">
+		<div class="welcome-box">
+			<div class="container">
+				<h1 class="heading">Hi everyone!</h1>
+				<div class="box">
+					<p>Drumpet began in <strong>Mexico City</strong> in 2017.</p>
+					<p>It is a project of two musicians graduated from the <strong>Ukrainian</strong> Conservatory.</p>
+					<p><strong>Alex</strong> into drums, electric bass, keyboard and percussion.</p>
+					<p><strong>Yuliya</strong> on the trumpet, sax and keyboards.</p>
+				</div>
+				<a href="#" class="btn">Know More</a>
+			</div>
+		</div>
+		<div class="social-holder">
+			<div class="container">
+				<ul class="social">
+					<li>
+						<a title="facebook" href="https://www.facebook.com/drumpetduo/">
+							<i class="fab fa-facebook-square"></i>
+						</a>
+					</li>
+					<li>
+						<a title="instagram" href="https://www.instagram.com/drumpetoficial/">
+							<i class="fab fa-instagram"></i>
+						</a>
+					</li>
+					<li>
+						<a title="twitter" href="https://twitter.com">
+							<i class="fab fa-twitter-square"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<app-photos-section></app-photos-section>
+	<div class="bgimg bgimg-2"></div>
+	<app-events-section></app-events-section>
+
+	<div id="section-about" class="about-section">
+		<div class="bgimg bgimg-3">
+			<div class="content container text--center">
+				<h1 class="heading">
+					<span class="text-en">About Us</span>
+					<span class="text-es">Acerca de Nosotros</span>
+				</h1>
+				<div class="text-en">
+					<div class="content-box">
+						<p>Drumpet began in Mexico City in 2017.</p>
+						<p>It is a project of two musicians graduated from the Ukrainian Conservatory.</p>
+						<p>Alex into drums, electric bass, keyboard and percussion.</p>
+						<p>Yuliya on the trumpet, sax and keyboards.</p>
+						<p>Alex and Yuliya have worked in different countries such as:</p>
+						<p>China, Turkey, Germany, Ukraine, Russia and the Arab Emirates in different projects and performing different musical genres.</p>
+					</div>
+					<ul>
+						<li>Drumpet plays different musical styles such as electronica, electro pop and Lounge.</li>
+						<li>Drumpet has a unique show with a style that separates it from other projects.</li>
+						<li>Drumpet is a musical experience that you have to experience.</li>
+					</ul>
+				</div>
+				<div class="text-es">
+					<div class="content-box">
+						<p>Drumpet comenzó en la Ciudad de México en 2017.</p>
+						<p>Es un proyecto de dos músicos graduados del conservatorio de Ucrania.</p>
+						<p>Alex en la batería, bajo eléctrico, teclado y percusiones.</p>
+						<p>Yuliya en la trompeta, sax y teclados.</p>
+						<p>Alex y Yuliya han trabajado en diferentes países como:</p>
+						<p>China, Turquía, Alemania, Ucrania, Rusia y Emiratos árabes en diferentes proyectos e interpretando diversos géneros musicales.</p>
+					</div>
+					<ul>
+						<li>Drumpet toca diferentes estilos musicales como electrónica, electro pop y Lounge.</li>
+						<li>Drumpet tiene un show único con un estilo que lo separa de otros proyectos.</li>
+						<li>Drumpet es una experiencia musical que tienes que experimentar.</li>
+					</ul>
+				</div>
+				<p><a href="pdf/drumpet_rider.pdf"><i class="fas fa-download"></i> See the Technical Rider (PDF)</a></p>
+			</div>
+		</div>
+	</div>
+
+	<div id="section-contacts" class="contacts-section section section--white">
+		<div class="container">
+			<h1 class="heading">
+				<span class="text-en">Contact Us</span>
+				<span class="text-es">Contáctenos</span>
+			</h1>
+			<div class="contacts">
+				<a class="phone" href="tel:5517984749">
+					<i class="fas fa-phone"></i>
+					<span>5517984749</span>
+				</a>
+				<a href="mailto:alexyackubova@yandex.ua" class="mail">
+					<i class="fas fa-envelope"></i>
+					<span>alexyackubova@yandex.ua</span>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="bgimg bgimg-4"></div>
+
+	<div class="footer">
+		<div class="container grid-row--gutter-none grid-row--between">
+			<div class="col-auto grid-row grid-row--middle">
+				<div class="col-auto">
+					<div class="logo">
+						<a href="#">{{title}}</a>
+					</div>
+				</div>
+				<span class="copyright col-auto">© Drumpet {{today | date:"y"}}. All rights reseved.</span>
+			</div>
+			<div class="col-auto grid-row--gutter-none grid-row--middle">
+				<nav class="col-auto" role="navigation">
+					<ul class="menu grid-row--gutter-none">
+						<li class="col-auto">
+							<a href="#section-home">
+								<span>Home</span>
+							</a>
+						</li>
+						<li class="col-auto">
+							<a href="#section-instagram">
+								<span class="text-en">Photo</span>
+								<span class="text-es">Foto</span>
+							</a>
+						</li>
+						<li class="col-auto">
+							<a href="#section-facebook">
+								<span class="text-en">Events</span>
+								<span class="text-es">Eventos</span>
+							</a>
+						</li>
+						<li class="col-auto">
+							<a href="#section-about">
+								<span class="text-en">About us</span>
+								<span class="text-es">Acerca de Nosotros</span>
+							</a>
+						</li>
+						<li class="col-auto">
+							<a href="#section-contacts">
+								<span class="text-en">Contacts</span>
+								<span class="text-es">Contactos</span>
+							</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</div>
+</div>
+
+<router-outlet></router-outlet>

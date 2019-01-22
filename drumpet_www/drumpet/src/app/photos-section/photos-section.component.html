@@ -1,0 +1,23 @@
+<div id="section-instagram" class="section section--gradient">
+	<div class="container">
+		<h1 class="heading">
+			<span class="text-en">Photos</span>
+			<span class="text-es">Fotos</span>
+		</h1>
+		<div class="instaFeed" [ngClass]="{'loading': !photos}">
+			<mat-spinner></mat-spinner>
+			<div class="grid-row">
+				<div class="col-lg-3 photo-container" *ngFor="let photo of photos">
+					<a href="{{photo.url}}" target="_blank" class="photo">
+						<div class="image__holder">
+							<div class="image">
+								<img src="{{photo.src}}" alt="{{photo.text}}">
+							</div>
+						</div>
+						<p title="{{photo.text}}">{{photo.text | slice:0:30}}</p>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,84 @@
+.event-container {
+	.holder {
+		.event {
+			background: #e7f1fa;
+			color: #192327;
+			padding: 50px 0;
+
+			.date {
+				color: #4f79ab;
+				&.day {
+					font: bold 80px/72px 'Oswald', sans-serif;
+				}
+
+				&.time,
+				&.month {
+					font-size: 18px;
+					font-weight: 800;
+					font-style: italic;
+				}
+			}
+
+			.city {
+				opacity: 0.5;
+				color: #000;
+				font-size: 16px;
+				text-transform: uppercase;
+				margin: 0 0 15px;
+				font-weight: bold;
+			}
+
+			.title {
+				font: bold 20px/22px 'Oswald', sans-serif;
+				color:#000;
+			}
+
+			.event-row {
+				border-right: 1px solid #ccddf5;
+				
+				&:last-child {
+					border: none;
+				}
+			}
+			
+			address {
+				display: block;
+			}
+		}
+		
+		&:nth-child(odd) .event {
+			background: #192327;
+			color: #e7f1fa;
+
+			.date {
+				color: #c0d5f0;
+			}
+
+			.title {
+				color: #C0D5F0;
+			}
+
+			.city {
+				color: #CCDDF5;
+			}
+		}
+	}
+
+	.show-more {
+		padding: 50px 0 0;
+
+		&.hidden {
+			display: none;
+		}
+	}
+
+	.link {
+		cursor: pointer;
+		font-size: 20px;
+		line-height: 22px;
+		color: #c0d5f0;
+		font-weight: 500;
+		display: block;
+		margin: 0 0 20px;
+	}
+}

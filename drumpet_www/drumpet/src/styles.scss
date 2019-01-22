@@ -1,0 +1,144 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$drumpet-primary: mat-palette($mat-indigo);
+$drumpet-accent: mat-palette($mat-pink, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$drumpet-warn: mat-palette($mat-red);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$drumpet-theme: mat-light-theme($drumpet-primary, $drumpet-accent, $drumpet-warn);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($drumpet-theme);
+
+@import "grid2flex-variables-custom";
+@import "node_modules/grid2flex/src/grid2flex";
+
+
+body, html, #wrapper {
+	height: 100%;
+	margin: 0;
+	color: #fff;
+}
+
+a {
+	text-decoration: none;
+}
+
+p {
+	margin: 0;
+}
+
+html, body { height: 100%; }
+body { 
+	margin: 0; 
+	font: 16px/28px 'Raleway', "Helvetica Neue", sans-serif; 
+}
+
+.es .text-en,
+.en .text-es {
+	display: none;
+}
+
+.container {
+	width: 1280px;
+	margin: 0 auto;
+}
+
+.section {
+	padding: 100px 40px;
+	text-align: center;
+
+	&--gradient {
+		color: #0d0606;
+		background: linear-gradient(180deg, rgba(232, 232, 232, 0.3) 0%, rgba(172, 207, 236, 0.3) 100%);
+	}
+
+	&--white {
+		color: #0d0606;
+		background: #fff;
+	}
+}
+
+.heading {
+	font-family: 'Oswald', sans-serif;
+	font-size: 50px;
+	line-height: 52px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	margin: 0 0 25px;
+
+	&:after {
+		content: '';
+		position: absolute;
+		top: -24px;
+		left: -34px;
+		width: 140px;
+		height: 46px;
+		background: #c1d5f0;
+		opacity: .4;
+		z-index: -1;
+	}
+
+	.section--white & {
+		&:after {
+			background: #c0d5f0;
+		}
+	}
+}
+
+.btn {
+	display: inline-block;
+	font-weight: 500;
+	color: #fff;
+	line-height: 44px;
+	padding: 0 30px;
+	background: linear-gradient(22.61deg, #CC33B7 9.73%, #176FC6 89.14%);
+	border-radius: 33px;
+	transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+	&:hover {
+		color: #0d0606;
+	} 
+}
+
+.mat-spinner {
+	margin: 50px auto;
+	display: none !important;
+
+	.loading & {
+		display: block !important;
+	}
+}
+
+// helpers
+
+.text {
+	&--right {
+		text-align: right;
+	}
+
+	&--left {
+		text-align: left;
+	}
+
+	&--center {
+		text-align: center;
+	}
+}

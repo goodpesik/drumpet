@@ -1,0 +1,21 @@
+$configuration: (
+	columns-count:                               12,
+	container:                                   grid-container,
+	row:                                         grid-row,
+	column:                                      col,
+	direction-prefix:                            dir,
+	offsets-enabled:                             true,
+	box-sizing-enabled:                          true,
+	row-wrap-enabled:                            true,
+	row-vertical-alignment-enabled:              true,
+	row-horizontal-alignment-enabled:            true,
+	direction-enabled:                           true,
+	column-vertical-alignment-enabled:           true,
+	column-ordering-enabled:                     true,
+	breakpoints-enabled:                         true
+);
+
+$breakpoints: (
+	xs:                                          0,
+	lg:                                          1280px
+);

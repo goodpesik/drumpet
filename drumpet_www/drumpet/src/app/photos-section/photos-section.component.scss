@@ -1,0 +1,48 @@
+.photo-container {
+	margin-bottom: 30px;
+}
+
+.photo {
+	background: #fff;
+	padding: 25px;
+	display: block;
+	color: #0D0606;
+	border-radius: 5px;
+
+	.image {
+		position: relative;
+		overflow: hidden;
+		width: 255px;
+		height: 255px;
+		margin-bottom: 15px;
+		border-radius: 6px;
+		text-align: center;
+
+		&__holder {
+			position: relative;
+
+			&:after {
+				content: '';
+				width: 147px;
+				height: 89px;
+				background: rgba(9, 8, 26, 0.47);
+				filter: blur(27.1828px);
+				position: absolute;
+				bottom: 0;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+
+		img {
+			width: auto;
+			height: 255px;
+			border-radius: 6px;
+			position: absolute;
+			top: 0;
+			left: 50%;
+			transform: translateX(-50%);
+			z-index: 2;
+		}
+	}
+}
