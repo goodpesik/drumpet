@@ -16,11 +16,11 @@ import { FormsModule } from '@angular/forms';
 export class AppComponent {
   title = 'drumpet';
   today: Date = new Date();
-  langSetting: {}[] = [
+  langSetting: {name: string, abbrev: string}[] = [
     {name: 'ES', abbrev: 'es'},
     {name: 'EN', abbrev: 'en'}
   ];
-  langSelectModel: {} = {
+  langSelectModel: {lang: string} = {
     lang: 'es'
   };
 }

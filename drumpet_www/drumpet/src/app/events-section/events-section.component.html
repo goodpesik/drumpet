@@ -13,15 +13,15 @@
 				<div class="holder" *ngFor="let event of events | filterEvents:isDisplayAll | slice:0:eventsShowLimit; let i = index;" [ngClass]="{'outdated': event.isOutdated}">
 					<div *ngIf="event.noposts">No Events to display</div>
 					<div *ngIf="event.date != '' && !event.noposts" class="event grid-row">
-						<div class="col-auto event-row">
+						<div class="col-md-auto event-row">
 							<p class="date time">{{event.time}}</p>
 							<p class="date day">{{event.date | date:"d"}}</p>
 							<p class="date month">{{event.date | date:"MMM - y"}}</p>
 						</div>
-						<div class="col event-row">
+						<div class="col-md event-row">
 							<p class="title">{{event.title}}</p>
 						</div>
-						<div class="col event-row text--left">
+						<div class="col-md event-row text--left">
 							<p class="city">{{event.city}}</p>
 							<div class="address grid-row">
 								<div class="col-auto">
@@ -32,11 +32,11 @@
 								</div>
 							</div>
 						</div>
-						<div *ngIf="event.book != ''" class="col event-row text--left">
+						<div *ngIf="event.book != ''" class="col-md event-row text--left">
 							<p class="city">Book</p>
 							<p class="book">{{event.book}}</p>
 						</div>
-						<div *ngIf="event.tickets != ''" class="col event-row grid-row grid-row--center grid-row--middle">
+						<div *ngIf="event.tickets != ''" class="col-md event-row grid-row grid-row--center grid-row--middle">
 							<a href="{{event.tickets}}" class="btn">Book Now</a>
 						</div>
 					</div>

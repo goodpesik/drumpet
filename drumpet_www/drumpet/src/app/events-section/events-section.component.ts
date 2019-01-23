@@ -43,7 +43,7 @@ export class EventsSectionComponent implements OnInit {
 		this.checkShowMoreButtonState();
 	}
 
-	private checkShowMoreButtonState(): void {
+	public checkShowMoreButtonState(): void {
 		if (!this.isDisplayAll) {
 			let futureEvents = this.events.filter(event => !event.isOutdated);
 			this.hideButton = this.eventsShowLimit >= futureEvents.length ? true : false;

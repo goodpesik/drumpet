@@ -11,8 +11,8 @@ import { Event } from '../app/event';
   providedIn: 'root'
 })
 export class DataService {
-	private photosUrl = 'http://localhost:8081/instaFeed';
-	private eventsUrl = 'http://localhost:8081/events';
+	private photosUrl = 'http://104.248.204.158:8081/instaFeed';
+	private eventsUrl = 'http://104.248.204.158:8081/events';
 	private headers: Headers;
 
 	constructor(private http: HttpClient) {

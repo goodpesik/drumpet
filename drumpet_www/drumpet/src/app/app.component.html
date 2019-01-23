@@ -1,58 +1,67 @@
 <div id="wrapper" [ngClass]="langSelectModel.lang">
-	<header class="header">
-		<div class="container grid-row--gutter-none grid-row--between">
-			<div class="col-auto">
-				<div class="logo">
-					<a href="#">{{title}}</a>
-				</div>
-			</div>
-			<div class="col-auto grid-row--gutter-none grid-row--middle">
-				<nav class="col-auto" role="navigation">
-				<ul class="menu grid-row--gutter-none">
-				<li class="col-auto">
-					<a href="#section-home">
-						<span>Home</span>
-					</a>
-				</li>
-				<li class="col-auto">
-					<a href="#section-instagram">
-						<span class="text-en">Photo</span>
-						<span class="text-es">Foto</span>
-					</a>
-				</li>
-				<li class="col-auto">
-					<a href="#section-facebook">
-						<span class="text-en">Events</span>
-						<span class="text-es">Eventos</span>
-					</a>
-				</li>
-				<li class="col-auto">
-					<a href="#section-about">
-						<span class="text-en">About us</span>
-						<span class="text-es">Acerca de Nosotros</span>
-					</a>
-				</li>
-				<li class="col-auto">
-					<a href="#section-contacts">
-						<span class="text-en">Contacts</span>
-						<span class="text-es">Contactos</span>
-					</a>
-				</li>
-				</ul>
-				</nav>
-				<div class="lang col-auto">
-					<select [(ngModel)]='langSelectModel.lang' name="langSelect" id="lang-select" class="selectpicker">
-						<option *ngFor="let lang of langSetting" [value]="lang.abbrev">
-						{{ lang.name }}
-						</option>
-					</select>
-				</div>
-			</div>
-		</div>
-	</header>
-
 	<!-- Home section -->
 	<div id="section-home" class="bgimg bgimg-1">
+		<header class="header">
+			<div class="container grid-row--gutter-none grid-row--between">
+				<div class="col-auto">
+					<div class="logo">
+						<a href="#">{{title}}</a>
+					</div>
+				</div>
+				<div class="col-auto ps">
+					<div class="menu-holder">
+						<input type="checkbox" />
+						<div class="icon-el"></div>
+						<div class="icon-el"></div>
+						<div class="icon-el"></div>
+						<div class="burger-menu grid-row--gutter-none grid-row--middle">
+							<div class="col-md-auto ps">
+								<nav role="navigation">
+									<ul class="menu grid-row--gutter-none">
+										<li class="col-md-auto">
+											<a href="#section-home">
+												<span>Home</span>
+											</a>
+										</li>
+										<li class="col-md-auto">
+											<a href="#section-instagram">
+												<span class="text-en">Photo</span>
+												<span class="text-es">Foto</span>
+											</a>
+										</li>
+										<li class="col-md-auto">
+											<a href="#section-events">
+												<span class="text-en">Events</span>
+												<span class="text-es">Eventos</span>
+											</a>
+										</li>
+										<li class="col-md-auto">
+											<a href="#section-about">
+												<span class="text-en">About us</span>
+												<span class="text-es">Acerca de Nosotros</span>
+											</a>
+										</li>
+										<li class="col-md-auto">
+											<a href="#section-contacts">
+												<span class="text-en">Contacts</span>
+												<span class="text-es">Contactos</span>
+											</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+							<div class="lang col-md-auto">
+								<select [(ngModel)]='langSelectModel.lang' name="langSelect" id="lang-select" class="selectpicker">
+									<option *ngFor="let lang of langSetting" [value]="lang.abbrev">
+									{{ lang.name }}
+									</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
 		<div class="welcome-box">
 			<div class="container">
 				<h1 class="heading">Hi everyone!</h1>
@@ -62,7 +71,7 @@
 					<p><strong>Alex</strong> into drums, electric bass, keyboard and percussion.</p>
 					<p><strong>Yuliya</strong> on the trumpet, sax and keyboards.</p>
 				</div>
-				<a href="#" class="btn">Know More</a>
+				<a href="#section-about" class="btn">Know More</a>
 			</div>
 		</div>
 		<div class="social-holder">
@@ -128,7 +137,7 @@
 						<li>Drumpet es una experiencia musical que tienes que experimentar.</li>
 					</ul>
 				</div>
-				<p><a href="pdf/drumpet_rider.pdf"><i class="fas fa-download"></i> See the Technical Rider (PDF)</a></p>
+				<p><a href="/assets/pdf/drumpet_rider.pdf"><i class="fas fa-download"></i> See the Technical Rider (PDF)</a></p>
 			</div>
 		</div>
 	</div>
@@ -163,33 +172,33 @@
 				</div>
 				<span class="copyright col-auto">© Drumpet {{today | date:"y"}}. All rights reseved.</span>
 			</div>
-			<div class="col-auto grid-row--gutter-none grid-row--middle">
+			<div class="col-auto grid-row--gutter-none grid-row--middle mobile-hidden">
 				<nav class="col-auto" role="navigation">
 					<ul class="menu grid-row--gutter-none">
-						<li class="col-auto">
+						<li class="col-md-auto">
 							<a href="#section-home">
 								<span>Home</span>
 							</a>
 						</li>
-						<li class="col-auto">
+						<li class="col-md-auto">
 							<a href="#section-instagram">
 								<span class="text-en">Photo</span>
 								<span class="text-es">Foto</span>
 							</a>
 						</li>
-						<li class="col-auto">
-							<a href="#section-facebook">
+						<li class="col-md-auto">
+							<a href="#section-events">
 								<span class="text-en">Events</span>
 								<span class="text-es">Eventos</span>
 							</a>
 						</li>
-						<li class="col-auto">
+						<li class="col-md-auto">
 							<a href="#section-about">
 								<span class="text-en">About us</span>
 								<span class="text-es">Acerca de Nosotros</span>
 							</a>
 						</li>
-						<li class="col-auto">
+						<li class="col-md-auto">
 							<a href="#section-contacts">
 								<span class="text-en">Contacts</span>
 								<span class="text-es">Contactos</span>
