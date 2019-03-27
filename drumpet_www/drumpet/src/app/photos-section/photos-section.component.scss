@@ -1,5 +1,41 @@
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
 .photo-container {
 	margin-bottom: 30px;
+}
+
+::ng-deep .ngucarousel {
+	overflow: visible !important;
+
+	@media (min-width: 1024px) {
+		.ngucarousel-items {
+			flex-wrap: wrap;
+			transform: none !important;
+		}
+	}
+}
+
+.myPoint {
+	margin: 0;
+	padding: 20px 0 0;
+	list-style: none;
+	text-align: center;
+	@media (min-width: 1024px) {
+		display: none;
+	}
+
+	li {
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: #fff;
+		display: inline-block;
+		margin: 0 10px;
+
+		&.active {
+			background: #000;
+		}
+	}
 }
 
 .photo {
@@ -17,9 +53,11 @@
 		margin-bottom: 15px;
 		border-radius: 6px;
 		text-align: center;
+		display: inline-block;
 
 		&__holder {
 			position: relative;
+			text-align: center;
 
 			&:after {
 				content: '';

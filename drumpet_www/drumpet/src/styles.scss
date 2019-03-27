@@ -26,14 +26,15 @@ $drumpet-theme: mat-light-theme($drumpet-primary, $drumpet-accent, $drumpet-warn
 // that you are using.
 @include angular-material-theme($drumpet-theme);
 
-@import "grid2flex-variables-custom";
+@import "scss/grid2flex-variables-custom";
 @import "node_modules/grid2flex/src/grid2flex";
+@import "scss/colors";
 
 
 body, html, #wrapper {
 	height: 100%;
 	margin: 0;
-	color: #fff;
+	color: $color-white;
 }
 
 a {
@@ -59,7 +60,7 @@ body {
 	max-width: 1280px;
 	margin: 0 auto;
 
-	@media only screen and (max-device-width: 1024px) {
+	@media (max-width: 767px) {
 		padding: 0 15px;
 	}
 }
@@ -68,14 +69,24 @@ body {
 	padding: 100px 40px;
 	text-align: center;
 
+	&--white {
+		color: $color-dark-night;
+		background: $color-white;
+	}
+
 	&--gradient {
-		color: #0d0606;
+		color: $color-dark-night;
 		background: linear-gradient(180deg, rgba(232, 232, 232, 0.3) 0%, rgba(172, 207, 236, 0.3) 100%);
 	}
 
-	&--white {
-		color: #0d0606;
-		background: #fff;
+	@media (max-width: 767px) {
+		padding: 50px 15px;
+	}
+}
+
+#section-instagram {
+	@media (max-width: 767px) {
+		overflow: hidden;
 	}
 }
 
@@ -95,14 +106,14 @@ body {
 		left: -34px;
 		width: 140px;
 		height: 46px;
-		background: #c1d5f0;
+		background: $color-white-blue;
 		opacity: .4;
 		z-index: -1;
 	}
 
 	.section--white & {
 		&:after {
-			background: #c0d5f0;
+			background: $color-white-blue;
 		}
 	}
 }
@@ -110,15 +121,15 @@ body {
 .btn {
 	display: inline-block;
 	font-weight: 500;
-	color: #fff;
+	color: $color-white;
 	line-height: 44px;
 	padding: 0 30px;
-	background: linear-gradient(22.61deg, #CC33B7 9.73%, #176FC6 89.14%);
+	background: linear-gradient(22.61deg, #F6596E 9.73%, #453B94 89.14%);
 	border-radius: 33px;
 	transition: color 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 
 	&:hover {
-		color: #0d0606;
+		color: $color-dark-night;
 	} 
 }
 
@@ -151,7 +162,7 @@ body {
 	position: static !important;
 }
 
-@media only screen and (max-device-width: 1024px) {
+@media (max-width: 767px) {
 	.mobile-hidden {
 		display: none !important;
 	}

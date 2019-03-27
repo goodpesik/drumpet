@@ -4,20 +4,22 @@
 			<span class="text-en">Photos</span>
 			<span class="text-es">Fotos</span>
 		</h1>
-		<div class="instaFeed" [ngClass]="{'loading': !photos}">
+		<div class="instaFeed" [ngClass]="{'loading': !photos.length}">
 			<mat-spinner></mat-spinner>
-			<div class="grid-row">
-				<div class="col-lg-3 photo-container" *ngFor="let photo of photos">
+			<ngu-carousel  class="grid-row" #myCarousel [inputs]="carouselTile" [dataSource]="photos">
+				<ngu-tile class="col-lg-3" *nguCarouselDef="let photo; let i = index">
 					<a href="{{photo.url}}" target="_blank" class="photo">
 						<div class="image__holder">
 							<div class="image">
 								<img src="{{photo.src}}" alt="{{photo.text}}">
 							</div>
 						</div>
-						<p title="{{photo.text}}">{{photo.text | slice:0:30}}</p>
 					</a>
-				</div>
-			</div>
+				</ngu-tile>
+				<ul class="myPoint" NguCarouselPoint>
+					<li *ngFor="let i of myCarousel.pointNumbers; let i = index" [class.active]="i==myCarousel.activePoint" (click)="myCarousel.moveTo(i)"></li>
+				</ul>
+			</ngu-carousel>
 		</div>
 	</div>
 </div>

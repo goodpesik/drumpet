@@ -1,44 +1,78 @@
+@import "../../scss/colors";
+
 .event-container {
 	.holder {
 		.event {
-			background: #e7f1fa;
-			color: #192327;
+			background: $color-light;
+			color: $color-dark;
 			padding: 50px 0;
 
 			.date {
-				color: #4f79ab;
+				color: $color-blue;
 				&.day {
 					font: bold 80px/72px 'Oswald', sans-serif;
 				}
 
-				&.time,
 				&.month {
 					font-size: 18px;
 					font-weight: 800;
 					font-style: italic;
+					color: $color-purple;
+				}
+
+				&.time-holder {
+					color: $color-gray;
+					font-size: 14px;
+					line-height: 20px;
+
+					.time {
+						font-size: 32px;
+						line-height: 37px;
+						color: $color-ligth-blue;
+						vertical-align: middle;
+					}
 				}
 			}
 
 			.city {
-				opacity: 0.5;
-				color: #000;
-				font-size: 16px;
+				color: $color-gray;
+				font-size: 15px;
+				line-height: 18px;
 				text-transform: uppercase;
-				margin: 0 0 15px;
+				margin: 0;
 				font-weight: bold;
 			}
 
 			.title {
-				font: bold 20px/22px 'Oswald', sans-serif;
-				color:#000;
+				font-size: 22px;
+				line-height: 26px;
+				font-weight: 700;
+				font-style: italic;
+				color: $color-black;
+			}
+
+			.title-row {
+				@media (max-width: 767px) {
+					margin: 0 0 15px;
+				}
 			}
 
 			.event-row {
-				border-right: 1px solid #ccddf5;
+				border-right: 1px solid $color-border;
+				padding: 0 35px;
 				
 				&:last-child {
 					border: none;
 				}
+
+				@media (max-width: 767px) {
+					margin: 0 0 15px;
+				}
+			}
+
+			.address-icon {
+				padding-right: 0 !important;
+				color: $color-address;
 			}
 			
 			address {
@@ -47,19 +81,25 @@
 		}
 		
 		&:nth-child(odd) .event {
-			background: #192327;
-			color: #e7f1fa;
+			background: $color-dark;
+			color: $color-ligth-blue;
 
 			.date {
-				color: #c0d5f0;
+				&.month {
+					color: $color-ligth-blue;
+				}
+
+				&.time-holder {
+					color: $color-ligth-blue;
+				}
 			}
 
 			.title {
-				color: #C0D5F0;
+				color: $color-ligth-blue;
 			}
 
 			.city {
-				color: #CCDDF5;
+				color: $color-ligth-blue;
 			}
 		}
 	}
@@ -76,9 +116,13 @@
 		cursor: pointer;
 		font-size: 20px;
 		line-height: 22px;
-		color: #c0d5f0;
+		color: $color-white-blue;
 		font-weight: 500;
 		display: block;
 		margin: 0 0 20px;
+
+		.plus {
+			color: $color-red;
+		}
 	}
 }

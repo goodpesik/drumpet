@@ -9,6 +9,7 @@ import { PhotosSectionComponent } from './photos-section/photos-section.componen
 import { HttpClientModule } from '@angular/common/http';
 import { EventsSectionComponent } from './events-section/events-section.component';
 import { FilterEventsPipe } from './filter-events.pipe';
+import { NguCarouselModule } from '@ngu/carousel'
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FilterEventsPipe } from './filter-events.pipe';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
-    HttpClientModule
+    HttpClientModule,
+    NguCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]

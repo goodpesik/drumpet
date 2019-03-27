@@ -3,61 +3,63 @@
 	<div id="section-home" class="bgimg bgimg-1">
 		<header class="header">
 			<div class="container grid-row--gutter-none grid-row--between">
-				<div class="col-auto">
+				<div class="col-auto logo-holder">
 					<div class="logo">
 						<a href="#">{{title}}</a>
 					</div>
 				</div>
-				<div class="col-auto ps">
-					<div class="menu-holder">
-						<input type="checkbox" />
-						<div class="icon-el"></div>
-						<div class="icon-el"></div>
-						<div class="icon-el"></div>
-						<div class="burger-menu grid-row--gutter-none grid-row--middle">
-							<div class="col-md-auto ps">
-								<nav role="navigation">
-									<ul class="menu grid-row--gutter-none">
-										<li class="col-md-auto">
-											<a href="#section-home">
-												<span>Home</span>
-											</a>
-										</li>
-										<li class="col-md-auto">
-											<a href="#section-instagram">
-												<span class="text-en">Photo</span>
-												<span class="text-es">Foto</span>
-											</a>
-										</li>
-										<li class="col-md-auto">
-											<a href="#section-events">
-												<span class="text-en">Events</span>
-												<span class="text-es">Eventos</span>
-											</a>
-										</li>
-										<li class="col-md-auto">
-											<a href="#section-about">
-												<span class="text-en">About us</span>
-												<span class="text-es">Acerca de Nosotros</span>
-											</a>
-										</li>
-										<li class="col-md-auto">
-											<a href="#section-contacts">
-												<span class="text-en">Contacts</span>
-												<span class="text-es">Contactos</span>
-											</a>
-										</li>
-									</ul>
-								</nav>
-							</div>
-							<div class="lang col-md-auto">
-								<select [(ngModel)]='langSelectModel.lang' name="langSelect" id="lang-select" class="selectpicker">
-									<option *ngFor="let lang of langSetting" [value]="lang.abbrev">
-									{{ lang.name }}
-									</option>
-								</select>
+				<div class="col col-lg-auto grid-row--gutter-none grid-row-lg--middle">
+					<div class="col col-lg-auto ps">
+						<div class="menu-holder">
+							<input type="checkbox" />
+							<div class="icon-el"></div>
+							<div class="icon-el"></div>
+							<div class="icon-el"></div>
+							<div class="burger-menu">
+								<div class="col-lg-auto ps">
+									<nav role="navigation">
+										<ul class="menu grid-row--gutter-none">
+											<li class="col-lg-auto">
+												<a href="#section-home">
+													<span>Home</span>
+												</a>
+											</li>
+											<li class="col-lg-auto">
+												<a href="#section-instagram">
+													<span class="text-en">Photo</span>
+													<span class="text-es">Foto</span>
+												</a>
+											</li>
+											<li class="col-lg-auto">
+												<a href="#section-events">
+													<span class="text-en">Events</span>
+													<span class="text-es">Eventos</span>
+												</a>
+											</li>
+											<li class="col-lg-auto">
+												<a href="#section-about">
+													<span class="text-en">About us</span>
+													<span class="text-es">Acerca de Nosotros</span>
+												</a>
+											</li>
+											<li class="col-lg-auto">
+												<a href="#section-contacts">
+													<span class="text-en">Contacts</span>
+													<span class="text-es">Contactos</span>
+												</a>
+											</li>
+										</ul>
+									</nav>
+								</div>
 							</div>
 						</div>
+					</div>
+					<div class="lang col-auto">
+						<select [(ngModel)]='langSelectModel.lang' name="langSelect" id="lang-select" class="selectpicker">
+							<option *ngFor="let lang of langSetting" [value]="lang.abbrev">
+							{{ lang.name }}
+							</option>
+						</select>
 					</div>
 				</div>
 			</div>
@@ -137,7 +139,12 @@
 						<li>Drumpet es una experiencia musical que tienes que experimentar.</li>
 					</ul>
 				</div>
-				<p><a href="/assets/pdf/drumpet_rider.pdf"><i class="fas fa-download"></i> See the Technical Rider (PDF)</a></p>
+				<p class="download">
+					<a href="/assets/pdf/drumpet_rider.pdf">
+						<i class="fas fa-download"></i> 
+						<span>See the Technical Rider (PDF)</span>
+					</a>
+				</p>
 			</div>
 		</div>
 	</div>
@@ -148,16 +155,20 @@
 				<span class="text-en">Contact Us</span>
 				<span class="text-es">Contáctenos</span>
 			</h1>
-			<div class="contacts">
-				<a class="phone" href="tel:5517984749">
-					<i class="fas fa-phone"></i>
-					<span>5517984749</span>
-				</a>
-				<a href="mailto:alexyackubova@yandex.ua" class="mail">
-					<i class="fas fa-envelope"></i>
-					<span>alexyackubova@yandex.ua</span>
-				</a>
-			</div>
+			<ul class="contacts">
+				<li>
+					<a class="phone" href="tel:5517984749">
+						<i class="fas fa-phone"></i>
+						<span>5517984749</span>
+					</a>
+				</li>
+				<li>
+					<a href="mailto:alexyackubova@yandex.ua" class="mail">
+						<i class="fas fa-envelope"></i>
+						<span>alexyackubova@yandex.ua</span>
+					</a>
+				</li>
+			</ul>
 		</div>
 	</div>
 	<div class="bgimg bgimg-4"></div>
@@ -175,30 +186,30 @@
 			<div class="col-auto grid-row--gutter-none grid-row--middle mobile-hidden">
 				<nav class="col-auto" role="navigation">
 					<ul class="menu grid-row--gutter-none">
-						<li class="col-md-auto">
+						<li class="col-lg-auto">
 							<a href="#section-home">
 								<span>Home</span>
 							</a>
 						</li>
-						<li class="col-md-auto">
+						<li class="col-lg-auto">
 							<a href="#section-instagram">
 								<span class="text-en">Photo</span>
 								<span class="text-es">Foto</span>
 							</a>
 						</li>
-						<li class="col-md-auto">
+						<li class="col-lg-auto">
 							<a href="#section-events">
 								<span class="text-en">Events</span>
 								<span class="text-es">Eventos</span>
 							</a>
 						</li>
-						<li class="col-md-auto">
+						<li class="col-lg-auto">
 							<a href="#section-about">
 								<span class="text-en">About us</span>
 								<span class="text-es">Acerca de Nosotros</span>
 							</a>
 						</li>
-						<li class="col-md-auto">
+						<li class="col-lg-auto">
 							<a href="#section-contacts">
 								<span class="text-en">Contacts</span>
 								<span class="text-es">Contactos</span>

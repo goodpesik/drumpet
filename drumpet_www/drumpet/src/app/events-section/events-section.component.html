@@ -13,36 +13,39 @@
 				<div class="holder" *ngFor="let event of events | filterEvents:isDisplayAll | slice:0:eventsShowLimit; let i = index;" [ngClass]="{'outdated': event.isOutdated}">
 					<div *ngIf="event.noposts">No Events to display</div>
 					<div *ngIf="event.date != '' && !event.noposts" class="event grid-row">
-						<div class="col-md-auto event-row">
-							<p class="date time">{{event.time}}</p>
+						<div class="col-lg-auto event-row">
 							<p class="date day">{{event.date | date:"d"}}</p>
 							<p class="date month">{{event.date | date:"MMM - y"}}</p>
 						</div>
-						<div class="col-md event-row">
-							<p class="title">{{event.title}}</p>
-						</div>
-						<div class="col-md event-row text--left">
-							<p class="city">{{event.city}}</p>
+						<div class="col-lg event-row text--left">
+							<div class="grid-row grid-row--between title-row">
+								<p class="col title">{{event.title}}</p>
+								<p class="col date time-holder grid-row grid-row--middle grid-row--right">
+									<span class="col-auto">start at</span>
+									<span class="col-auto time">{{event.time}}</span>
+								</p>
+							</div>
 							<div class="address grid-row">
-								<div class="col-auto">
+								<div class="col-auto address-icon">
 									<i class="fas fa-map-marker-alt"></i>
 								</div>
 								<div class="col">
+									<p class="city">{{event.city}}</p>
 									<span>{{event.place}}</span>
 								</div>
 							</div>
 						</div>
-						<div *ngIf="event.book != ''" class="col-md event-row text--left">
-							<p class="city">Book</p>
+						<div *ngIf="event.book != ''" class="col-lg-auto event-row text--left">
+							<p class="city">Reservation</p>
 							<p class="book">{{event.book}}</p>
 						</div>
-						<div *ngIf="event.tickets != ''" class="col-md event-row grid-row grid-row--center grid-row--middle">
+						<div *ngIf="event.tickets != ''" class="col-lg-auto event-row grid-row grid-row--center grid-row--middle">
 							<a href="{{event.tickets}}" class="btn">Book Now</a>
 						</div>
 					</div>
 				</div>
 				<div [ngClass]="{'hidden': hideButton}" class="show-more">
-					<span class="link" (click)="showMore()">+ More Events</span>
+					<span class="link" (click)="showMore()"><i class="fas fa-plus plus"></i> More Events</span>
 				</div>
 			</div>
 	</div>
