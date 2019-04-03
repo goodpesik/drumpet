@@ -1,3 +1,10 @@
+export class InstaPost {
+	src: string;
+	text: string;
+	url: string;
+	id: number;
+}
+
 export class Event {
 	date: Date;
 	time: Date;

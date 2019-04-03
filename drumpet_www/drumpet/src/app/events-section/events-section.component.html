@@ -5,7 +5,8 @@
 				<span class="text-es">Eventos futuros</span>
 			</h1>
 
-			<div class="event-container">
+			<div class="event-container" [ngClass]="{'loading': isLoading}">
+				<mat-spinner></mat-spinner>
 				<span class="link text--left" (click)="isDisplayAll = !isDisplayAll;checkShowMoreButtonState()">
 					<span *ngIf="!isDisplayAll">View All Events</span>
 					<span *ngIf="isDisplayAll">View Future Events</span>

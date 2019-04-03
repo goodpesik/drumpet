@@ -4,7 +4,7 @@
 			<span class="text-en">Photos</span>
 			<span class="text-es">Fotos</span>
 		</h1>
-		<div class="instaFeed" [ngClass]="{'loading': !photos.length}">
+		<div class="instaFeed" [ngClass]="{'loading': isLoading}">
 			<mat-spinner></mat-spinner>
 			<ngu-carousel  class="grid-row" #myCarousel [inputs]="carouselTile" [dataSource]="photos">
 				<ngu-tile class="col-lg-3" *nguCarouselDef="let photo; let i = index">

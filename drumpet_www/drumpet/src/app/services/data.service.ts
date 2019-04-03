@@ -4,8 +4,7 @@ import { HttpClient} from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { InstaPost } from '../app/insta-post';
-import { Event } from '../app/event';
+import { InstaPost, Event } from '../models/data.model';
 
 @Injectable({
   providedIn: 'root'
@@ -39,7 +38,6 @@ export class DataService {
 
 	private handleError<T> (operation = 'operation', result?: T) {
 		return (error: any): Observable<T> => {
-		  console.error(error); 
 		  return of(result as T);
 		};
 	  }

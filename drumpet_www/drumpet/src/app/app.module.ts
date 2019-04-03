@@ -9,7 +9,9 @@ import { PhotosSectionComponent } from './photos-section/photos-section.componen
 import { HttpClientModule } from '@angular/common/http';
 import { EventsSectionComponent } from './events-section/events-section.component';
 import { FilterEventsPipe } from './filter-events.pipe';
-import { NguCarouselModule } from '@ngu/carousel'
+import { NguCarouselModule } from '@ngu/carousel';
+import { RootStoreModule } from './root-store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,11 @@ import { NguCarouselModule } from '@ngu/carousel'
     BrowserAnimationsModule,
     MatProgressSpinnerModule,
     HttpClientModule,
-    NguCarouselModule
+    NguCarouselModule,
+    RootStoreModule,
+    StoreDevtoolsModule.instrument({
+      maxAge: 10
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

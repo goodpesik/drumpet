@@ -1,7 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../data.service';
-import { Event } from '../event';
-import { log } from 'util';
+import { Event } from '../models/data.model';
+import { Observable, Subject } from 'rxjs';
+import { takeUntil } from 'rxjs/operators';
+import { Store } from '@ngrx/store';
+import {
+	RootStoreState,
+	EventsStoreActions,
+	EventsStoreSelectors
+  } from '../root-store';
 
 @Component({
 	selector: 'app-events-section',
@@ -15,26 +21,40 @@ export class EventsSectionComponent implements OnInit {
 	eventsShowLimit: number = 3;
 	eventsShowStep: number = 3;
 	hideButton: boolean;
+	isLoading: boolean;
+
+	private _unsubscribe$ = new Subject();
+	private events$: Observable<Event[]> = this.store$.select(
+		EventsStoreSelectors.selectEvents
+	).pipe(takeUntil(this._unsubscribe$));
+	private isLoading$: Observable<boolean> = this.store$.select(
+		EventsStoreSelectors.selectMyFeatureIsLoading
+	).pipe(takeUntil(this._unsubscribe$));
 
 	constructor(
-		private dataService: DataService
+		private store$: Store<RootStoreState.State>
 	) { }
 
 	ngOnInit() {
-		this.getEvents()
-	}
+		this.store$.dispatch(
+			new EventsStoreActions.LoadRequestAction()
+		);
 
-	private getEvents(): void {
-		this.dataService.getEvents()
-		.subscribe(events => {
-			let index = 0;
-			events.forEach(event => {
-				if (new Date(event.date) < this.today) {
-					events[index].isOutdated = true;
-				}
-				index++;
-			});
-			this.events = events;
+		this.isLoading$.subscribe(isLoading => {
+			  this.isLoading = isLoading;
+		});
+
+		this.events$.subscribe(events => {
+			if(events) {
+				let index = 0;
+				events.forEach(event => {
+					if (new Date(event.date) < this.today) {
+						events[index].isOutdated = true;
+					}
+					index++;
+				});
+				this.events = events;
+			}
 		});
 	}
 
